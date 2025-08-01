@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NS7Visual</title>
+    <link rel="shortcut icon" href="img/icon.png" type="image/png" />
+    <link rel="stylesheet" href="css/about.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+    <!--     
+        /* color: #fef6e3; */
+        /* color: #384d37; */ -->
+  </head>
+
+  <body>
+    <header class="navbar">
+      <div class="container" style="margin: 0 16px">
+        <a href="index.html"
+          ><img src="img/hero.png" alt="NS7Visual Logo" class="logo"
+        /></a>
+        <div class="burger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div id="slider">
+        <nav>
+          <ul class="nav-links">
+            <li>
+              <a href="index.html"><i class="fa-solid fa-house"></i>Home</a>
+            </li>
+            <hr />
+            <li>
+              <a href="project.html"
+                ><i class="fa-solid fa-diagram-project"></i>Projects</a
+              >
+            </li>
+            <hr />
+            <li>
+              <a href="service.html"
+                ><i class="fa-solid fa-bell-concierge"></i>Services</a
+              >
+            </li>
+            <hr />
+            <li>
+              <a href="about.html"
+                ><i class="fa-regular fa-note-sticky"></i>About us</a
+              >
+            </li>
+            <hr />
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div id="first">
+        <div class="firstp">
+          <img src="img/T1.png" alt="main" />
+        </div>
+        <div class="firstd">
+          <div>
+            <h1 class="HO">Niketan Sharma</h1>
+          </div>
+          <div>
+            <p>
+              Hey There, I’m Niketan Sharma , The Founder Of NS7Visual. I’m
+              Passionate About Two Things: Graphic Designing And Trading (In
+              Forex And Crypto). As A Designer, I Focus On Creating Visuals That
+              Truly Connect With People And Help Brands Stand Out. Whether It’s
+              A Logo, Website, Or Digital Content, I Love Turning Ideas Into
+              Designs That Make A Statement.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div id="second">
+        <div class="card slide-in-left">
+          <div class="chead">
+            <img src="img/point.png" alt="point" />
+          </div>
+          <div class="cbody">
+            <p>
+              Passionate About Two Things: Graphic Designing And Trading (In
+              Forex And Crypto). As A Designer, I Focus On Creating Visuals That
+              Truly Connect With People And Help Brands Stand Out. Whether It’s
+              A Logo, Website, Or Digital Content, I Love Turning Ideas Into
+              Designs That Make A Statement.
+            </p>
+          </div>
+        </div>
+        <div class="card slide-in-left">
+          <div class="chead">
+            <img src="img/point.png" alt="point" />
+          </div>
+          <div class="cbody">
+            <p>
+              Passionate About Two Things: Graphic Designing And Trading (In
+              Forex And Crypto). As A Designer, I Focus On Creating Visuals That
+              Truly Connect With People And Help Brands Stand Out. Whether It’s
+              A Logo, Website, Or Digital Content, I Love Turning Ideas Into
+              Designs That Make A Statement.
+            </p>
+          </div>
+        </div>
+        <div class="card slide-in-left">
+          <div class="chead">
+            <img src="img/point.png" alt="point" />
+          </div>
+          <div class="cbody">
+            <p>
+              Passionate About Two Things: Graphic Designing And Trading (In
+              Forex And Crypto). As A Designer, I Focus On Creating Visuals That
+              Truly Connect With People And Help Brands Stand Out. Whether It’s
+              A Logo, Website, Or Digital Content, I Love Turning Ideas Into
+              Designs That Make A Statement.
+            </p>
+          </div>
+        </div>
+        <div class="card slide-in-left">
+          <div class="chead">
+            <img src="img/point.png" alt="point" />
+          </div>
+          <div class="cbody">
+            <p>
+              Passionate About Two Things: Graphic Designing And Trading (In
+              Forex And Crypto). As A Designer, I Focus On Creating Visuals That
+              Truly Connect With People And Help Brands Stand Out. Whether It’s
+              A Logo, Website, Or Digital Content, I Love Turning Ideas Into
+              Designs That Make A Statement.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer id="contact">
+      <h2>Contact Us</h2>
+      <p>Email: <a href="mailto:demo@smtp.com">demo@smtp.com</a></p>
+      <div
+        class="social"
+        style="
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          gap: 17px;
+        "
+      >
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+      <p>&copy; 2025 NS7Visual</p>
+    </footer>
+
+    <button id="scrollToTop"><i class="fa-solid fa-chevron-up"></i></button>
+
+    <script
+      src="https://kit.fontawesome.com/e062161507.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const cards = document.querySelectorAll(".slide-in-left");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              // Optionally stop observing after first reveal:
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+        }
+      );
+
+      cards.forEach((card) => {
+        observer.observe(card);
+      });
+    </script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
