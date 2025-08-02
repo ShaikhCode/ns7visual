@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Service -NS7Visual</title>
+    <link rel="shortcut icon" href="img/icon.png" type="image/png" />
+    <link rel="stylesheet" href="css/service.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      #first {
+        margin: 16px auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="navbar">
+      <div class="container" style="margin: 0 16px">
+        <a href="index.html"
+          ><img src="img/hero.png" alt="NS7Visual Logo" class="logo"
+        /></a>
+        <div class="burger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div id="slider">
+        <nav>
+          <ul class="nav-links">
+            <li>
+              <a href="index.html"><i class="fa-solid fa-house"></i>Home</a>
+            </li>
+            <hr />
+            <li>
+              <a href="project.html"
+                ><i class="fa-solid fa-diagram-project"></i>Projects</a
+              >
+            </li>
+            <hr />
+            <li>
+              <a href="service.html"
+                ><i class="fa-solid fa-bell-concierge"></i>Services</a
+              >
+            </li>
+            <hr />
+            <li>
+              <a href="about.html"
+                ><i class="fa-regular fa-note-sticky"></i>About us</a
+              >
+            </li>
+            <hr />
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="service-cards">
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="img/webdev.png" alt="Web Dev" />
+              <h3>Website Development</h3>
+              <p class="hint">Tap to Flip</p>
+            </div>
+            <div class="flip-back">
+              <h4>Features</h4>
+              <ul>
+                <li>Responsive Design</li>
+                <li>SEO Optimized</li>
+                <li>CMS Integration</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="img/graphic.png" alt="Graphics" />
+              <h3>Graphic Designing</h3>
+              <p class="hint">Tap to Flip</p>
+            </div>
+            <div class="flip-back">
+              <h4>Features</h4>
+              <ul>
+                <li>Logo & Branding</li>
+                <li>Social Media Kit</li>
+                <li>Banner Ads</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="img/videoedit.png" alt="Video Edit" />
+              <h3>Video Editing</h3>
+              <p class="hint">Tap to Flip</p>
+            </div>
+            <div class="flip-back">
+              <h4>Features</h4>
+              <ul>
+                <li>Motion Graphics</li>
+                <li>Reels & Shorts</li>
+                <li>Promotional Ads</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer id="contact">
+      <h2>Contact Us</h2>
+      <p>Email: <a href="mailto:demo@smtp.com">demo@smtp.com</a></p>
+      <div
+        class="social"
+        style="
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          gap: 17px;
+        "
+      >
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+      <p>&copy; 2025 NS7Visual</p>
+    </footer>
+
+    <button id="scrollToTop"><i class="fa-solid fa-chevron-up"></i></button>
+
+    <script
+      src="https://kit.fontawesome.com/e062161507.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const flipCards = document.querySelectorAll(".flip-card");
+
+      flipCards.forEach((card) => {
+        card.addEventListener("click", () => {
+          // Only enable click flip on mobile screens
+          if (window.innerWidth <= 768) {
+            card.classList.toggle("flipped");
+          }
+        });
+      });
+    </script>
+
+    <script src="script.js"></script>
+  </body>
+</html>

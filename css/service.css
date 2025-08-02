@@ -129,89 +129,108 @@ main {
   min-height: 100vh;
 }
 
-/* First Leader Section                                          ...........................................*/
-#first {
+/* CARDS ............................................................... */
+.service-cards {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  /* min-height: 80vh; */
   flex-wrap: wrap;
-  background: #384d37;
-  padding: 20px;
-  gap: 20px;
-  border-radius: 8px;
-  box-shadow: 5px 13px 16px #2a3e29;
+  gap: 36px;
+  justify-content: center;
 }
-.firstp {
-  width: auto;
-  max-width: 300px;
-  height: auto;
+
+.flip-card {
+  background: transparent;
+  /* background: #384d37; */
+  width: 300px;
+  height: 380px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card.flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: #fff;
+  border-radius: 16px;
+  border: 2px solid #384d37;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  animation: bounceIn 0.6s ease-in;
+  padding: 1rem;
+  text-align: center;
 }
-.firstp img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  border-radius: 12px;
-}
-.firstd {
-  flex: 1;
-  padding: 10px;
-}
-.firstd h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-.firstd p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #fff;
-}
-@keyframes bounceIn {
-  from {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-/* End MAin                                                         ..................*/
 
-/* Second Sub Cards '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''*/
-#second {
-  margin-top: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 80vh;
-  flex-wrap: wrap;
-  padding: 20px;
-  gap: 15px;
-  border-radius: 8px;
+.flip-front img {
   width: 100%;
+  border-radius: 9px;
+  margin-bottom: 1rem;
 }
-.card {
-  height: auto;
-  width: 250px;
-  border: 2px solid #384d37;
-  background: #384d37;
-  border-radius: 16px;
-  .cbody {
-    padding: 1rem;
-    color: #fff;
-  }
-  img {
-    width: 100%;
-    height: 40%;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+
+.flip-front h3 {
+  margin-bottom: 0.5rem;
+  color: #384d37;
+  font-family: "Permanent Marker", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.hint {
+  font-size: 0.8rem;
+  color: #90c9e6;
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+}
+
+.flip-back h4 {
+  margin-bottom: 0.5rem;
+  color: #00c896;
+  font-family: "Permanent Marker", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: x-large;
+}
+
+.flip-back ul {
+  list-style: none;
+  padding: 0;
+  color: #444;
+}
+
+.flip-back ul li::before {
+  content: "✔️";
+  margin-right: 6px;
+  color: #00c896;
+}
+
+@media (max-width: 768px) {
+  .flip-card:hover .flip-inner {
+    transform: none; /* Disable hover flip on mobile */
   }
 }
+
+/* End MAin                                                         ..................*/
 
 /* Animation Keyframes */
 @keyframes slideFromLeft {
