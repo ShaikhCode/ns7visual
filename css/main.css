@@ -371,7 +371,7 @@ body {
   /* display: flex; */
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  /*overflow: hidden;*/
   position: relative;
   width: 70vw;
   margin: auto;
@@ -567,3 +567,4 @@ footer a:hover {
   }
 }
 /* End Animation */
+
