@@ -6,14 +6,42 @@
     <title>NS7Visual</title>
     <link rel="shortcut icon" href="img/icon.png" type="image/png" />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/animation.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap"
       rel="stylesheet"
     />
+    <style>
+      #preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: black; /* fallback color */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
+
+      #preloader video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
   </head>
 
   <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <video autoplay muted playsinline id="preloader-video">
+        <source src="Visualssign.mp4" type="video/mp4" />
+      </video>
+    </div>
+
     <header class="navbar">
       <div class="container" style="margin: 0 16px">
         <a href="index.html"
@@ -57,7 +85,12 @@
 
     <section class="hero">
       <div class="slogan">
-        <h1>Welcome to <br> <span class="HO">NS7Visual</span></h1>
+        <p>
+          <span class="HO">We Bring Your Vision to Life</span> <br />NS7 Visual
+          is a creative agency dedicated to stunning visuals, engaging designs,
+          and impactful digital experiences.
+        </p>
+        <a href="project.html">Our Projects</a>
       </div>
       <div class="slideshow-container">
         <div id="customCarousel" class="carousel">
@@ -92,25 +125,25 @@
     <section class="projects" id="projects">
       <h2 class="HO">Our Projects</h2>
       <div class="project-grid">
-        <div class="project-card">
+        <div class="project-card" data-animate="slide-in-left">
           <img src="img/project1.jpg" alt="Project 1" />
           <h3>Project Title 1</h3>
           <p>Short description of the project...</p>
           <a href="project.html">View More</a>
         </div>
-        <div class="project-card">
+        <div class="project-card" data-animate="zoom-in">
           <img src="img/project2.jpg" alt="Project 2" />
           <h3>Project Title 2</h3>
           <p>Short description of the project...</p>
           <a href="project.html">View More</a>
         </div>
-        <div class="project-card">
+        <div class="project-card" data-animate="zoom-in">
           <img src="img/project3.jpg" alt="Project 3" />
           <h3>Project Title 3</h3>
           <p>Short description of the project...</p>
           <a href="project.html">View More</a>
         </div>
-        <div class="project-card">
+        <div class="project-card" data-animate="slide-in-right">
           <img src="img/project4.jpg" alt="Project 4" />
           <h3>Project Title 4</h3>
           <p>Short description of the project...</p>
@@ -122,7 +155,7 @@
     <section class="services blur-border" id="services">
       <h2 class="HO">Our Services</h2>
       <div class="service-grid">
-        <div class="service-card">
+        <div class="service-card" data-animate="slide-in-up">
           <div id="service-head"><h3>Basic Plan</h3></div>
           <div id="service-body">
             <ul>
@@ -133,7 +166,7 @@
             <a href="service.html">Read More</a>
           </div>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-animate="flip-in-y">
           <div id="service-head"><h3>Standard Plan</h3></div>
           <div id="service-body">
             <ul>
@@ -144,7 +177,7 @@
             <a href="service.html">Read More</a>
           </div>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-animate="slide-in-up">
           <div id="service-head"><h3>Premium Plan</h3></div>
           <div id="service-body">
             <ul>
@@ -158,17 +191,80 @@
       </div>
     </section>
 
-    <section class="testimonial-section" >
-      <h2 class="HO ">Testimonials Carousel - Cards Comments</h2>
+    <section class="testimonial" id="testimonial">
+      <h2 class="HO">What Our Clients Say</h2>
+
       <div class="testimonial-carousel">
-        <!-- Cards will be injected dynamically -->
+        <div class="testimonial-track">
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <img src="img//user.png" alt="Client 1" />
+              <div>
+                <h3>Niketan</h3>
+                <p>CEO, Bright Media</p>
+              </div>
+            </div>
+            <p class="testimonial-text">
+              "NS7 Visual transformed our brand presence online. The attention
+              to detail and creativity exceeded our expectations."
+            </p>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <img src="img//user.png" alt="Client 2" />
+              <div>
+                <h3 cl>Abhay</h3>
+                <p>Marketing Director</p>
+              </div>
+            </div>
+            <p class="testimonial-text">
+              "Their design work is simply stunning — every project feels
+              unique, fresh, and perfectly aligned with our goals."
+            </p>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <img src="img//user.png" alt="Client 3" />
+              <div>
+                <h3>Chandan</h3>
+                <p>Designer</p>
+              </div>
+            </div>
+            <p class="testimonial-text">
+              "Working with NS7 Visual has been a game-changer for our digital
+              campaigns. Highly recommended for creative excellence!"
+            </p>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <img src="img//user.png" alt="Client 3" />
+              <div>
+                <h3>RAZA</h3>
+                <p>Python</p>
+              </div>
+            </div>
+            <p class="testimonial-text">
+              "Working with NS7 Visual has been a game-changer for our digital
+              campaigns. Highly recommended for creative excellence!"
+            </p>
+          </div>
+
+          <!-- Add more testimonial-card divs as needed -->
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button class="carousel-btn prev">&#10094;</button>
+        <button class="carousel-btn next">&#10095;</button>
       </div>
-      <div class="dots"></div>
     </section>
 
     <footer id="contact">
       <h2 class="HO">Contact Us</h2>
-      <p>Email: <a href="mailto:demo@smtp.com">demo@smtp.com</a></p>
+      <p>
+        Email: <a href="mailto:contact@ns7visual.com">contact@ns7visual.com</a>
+      </p>
       <div
         class="social"
         style="
@@ -179,9 +275,21 @@
           gap: 17px;
         "
       >
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://instagram.com/ns7visual"
+          ><i class="fa-brands fa-instagram"></i
+        ></a>
+        <a href="https://www.linkedin.com/company/ns7visual"
+          ><i class="fa-brands fa-linkedin"></i
+        ></a>
+        <a href="https://www.facebook.com/ns7visual"
+          ><i class="fa-brands fa-facebook"></i
+        ></a>
+        <a href="https://x.com/ns7visual"
+          ><i class="fa-brands fa-x-twitter"></i
+        ></a>
+        <a href="https://www.youtube.com/@NS7Exchange/videos?sub_confirmation=1"
+          ><i class="fa-brands fa-youtube"></i
+        ></a>
       </div>
       <p>&copy; 2025 NS7Visual</p>
     </footer>
@@ -191,8 +299,22 @@
       src="https://kit.fontawesome.com/e062161507.js"
       crossorigin="anonymous"
     ></script>
+    <script src="scripts/animation.js"></script>
     <script src="script.js"></script>
     <script src="scripts/slider.js"></script>
     <script src="scripts/testimonal.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const preloader = document.getElementById("preloader");
+        const video = document.getElementById("preloader-video");
+
+        video.onended = () => {
+          preloader.style.opacity = "0";
+          setTimeout(() => {
+            preloader.style.display = "none";
+          }, 500); // wait for fade out
+        };
+      });
+    </script>
   </body>
 </html>

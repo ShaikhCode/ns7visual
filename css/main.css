@@ -16,14 +16,11 @@ body {
   font-family: "Permanent Marker", cursive;
   font-weight: 400;
   font-style: normal;
-  font-size: inherit;
+  font-size: 2.5rem;
   color: #ffffff;
   /* -webkit-text-stroke: 1px black; */
-  text-shadow: 
-    -1px -1px 5px #000,  
-     1px -1px 5px #000,
-    -1px  1px 5px #000,
-     1px  1px 5px #000;
+  text-shadow: -1px -1px 5px #000, 1px -1px 5px #000, -1px 1px 5px #000,
+    1px 1px 5px #000;
 }
 /* Nav Bar */
 .navbar {
@@ -124,36 +121,83 @@ body {
   background: #ffffff;
   animation: underlineExpand 0.5s ease forwards;
 }
-/* Nav End  
+/* Nav End  */
 
-/* Slide Show */
+/* Scroll effect .............................................................................................*/
+
+@media (min-width: 1272px) {
+  section {
+    position: sticky;
+    top: 89px;
+    z-index: 1;
+  }
+  #services {
+  position: sticky;
+  top: 89px;
+  z-index: 3;
+}
+.testimonial {
+  position: sticky;
+  top: 89px;
+  z-index: 4;
+}
+}
+
+/* Each section higher z-index than previous */
+@media (max-width:1271px) {
+  .hero {
+  position: sticky;
+  top: 89px;
+  z-index: 1;
+}
+.projects{
+  position: relative;
+  z-index: 2;
+}
+  #services {
+  position: relative;
+  z-index: 3;
+}
+.testimonial {
+  position: relative;
+  z-index: 4;
+}
+.hero{
+    height: 95vh;
+}
+}
+
+/* Optional smooth transition as they overlay */
+section {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Scroll effect END .............................................................................................*/
+
+/* Slide Show .............................................................................................*/
 .hero {
-  height: 95vh;
   display: flex;
   /* flex-direction: column; */
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   text-align: center;
   color: white;
 }
 
 .slogan {
-  font-size: 2.5rem;
-  text-align: center;
-}
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 
-@media (min-width: 1279px) {
-  .slogan {
-    background-image: url("../img/point.png");
-    height: -webkit-fill-available;
-    color: #000;
-    padding-top: 3%;
-    animation: slideInSidebar 1s ease;
+  a {
+    background: white;
+    width: fit-content;
+    text-decoration: none;
+    border-radius: 9px;
+    padding: 0.85rem;
+    margin: 12px auto;
   }
-}
-
-.slogan h1 {
-  font-size: 2.5rem;
 }
 
 .slideshow-container {
@@ -199,7 +243,7 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
   padding: 10px;
   border: none;
@@ -238,7 +282,7 @@ body {
   background-color: #717171;
 }
 
-/* Slide Show END*/
+/* Slide Show END.............................................................................................*/
 
 /* START BLUR BORDER .....................................................................................*/
 .blur-border {
@@ -246,7 +290,7 @@ body {
 }
 
 .blur-border::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   bottom: 0;
@@ -259,17 +303,16 @@ body {
 
 /*END BLUR BORDER .....................................................................................*/
 .projects,
-.services, .testimonial-section{
+.services {
   padding: 3rem 1rem;
   background: #fff;
   text-align: center;
   /* border-bottom: 2px solid #1b291a; */
   min-height: 100vh;
-  h2{
+  h2 {
     font-size: 2rem;
     animation: bounceIn 1s ease;
   }
-  
 }
 .projects {
   background: #384d37;
@@ -320,15 +363,15 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   animation: bounceIn 1s ease;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   border-bottom: 2px solid #384d37;
 }
 .project-card:hover,
-.service-card:hover{
-  transform: scale(1.1); 
+.service-card:hover {
+  transform: scale(1.1);
   box-shadow: 0px 5px 7px #fef6e3;
 }
-  
+
 .project-card img {
   width: 100%;
   height: 55%;
@@ -359,90 +402,120 @@ body {
 }
 
 /* TESTIMONIAL START ................................................................................ */
- .testimonial-section {
-  text-align: center;
-  padding: 50px 20px;
+
+/* Section Styling */
+.testimonial{
   background: #384d37;
-  color: #000000;
-  min-height: 100vh;
+  height: 70vh;
+  padding: 3rem 1rem;
+  text-align: center;
 }
 
-.testimonial-carousel {
-  /* display: flex; */
-  justify-content: center;
-  align-items: center;
-  /*overflow: hidden;*/
-  position: relative;
-  width: 70vw;
-  margin: auto;
-  margin-top: 7%;
- 
+.testimonial h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  animation: bounceIn 1s ease;
 }
-@media (max-width:740px) {
-  .testimonial-carousel {
-    width: 100%;
-    .testimonial{
-      width: 100%;
-    }
+
+/* Carousel Container */
+.testimonial-carousel {
+  position: relative;
+  /* max-width: 1100px; */
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 5rem 0;
+}
+
+/* Track (row of cards) */
+.testimonial-track {
+  display: flex;
+  gap: 40px; /* spacing between cards */
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Testimonial Card */
+.testimonial-card {
+  flex: 0 0 100%;
+  max-width: 100%;
+  background: rgba(239, 225, 225, 0.21);
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: left;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+/* Card Header */
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.testimonial-header img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+
+.testimonial-header h3 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.testimonial-header p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Card Text */
+.testimonial-text {
+  font-style: italic;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Show multiple cards on larger screens */
+@media (min-width: 600px) {
+  .testimonial-card {
+    flex: 0 0 calc(50% - 10px);
+    max-width: calc(50% - 10px);
   }
 }
 
-.testimonial {
-  flex: 0 0 60%;
-  background: #cfdccf;
-  margin: 0 10px;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px #c1d7c1;
-  opacity: 0;
-  transform: scale(0.8);
-  transition: all 0.5s ease, opacity 0.5s ease;
-  text-align: center;
+@media (min-width: 900px) {
+  .testimonial-card {
+    flex: 0 0 calc(33.333% - 13.33px);
+    max-width: calc(33.333% - 13.33px);
+  }
+}
+
+/* Navigation Buttons */
+.carousel-btn {
   position: absolute;
-  margin-bottom: 19px;
-}
-
-.testimonial.active {
-  opacity: 1;
-  transform: scale(1);
-  position: relative;
-}
-
-.testimonial img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 15px;
-}
-
-
-.testimonial .role {
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #ffffff;
-  -webkit-text-stroke: 1px black;
-  -webkit-text-fill-color: white;
-}
-
-.dots {
-  margin-top: 1px;
-}
-
-.dots span {
-  display: inline-block;
-  height: 10px;
-  width: 10px;
-  background: #e7ffe6;
-  border-radius: 50%;
-  margin: 0 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0.3rem 0.8rem;
   cursor: pointer;
-  opacity: 0.5;
+  border-radius: 50%;
+  z-index: 2;
 }
+.carousel-btn.prev { left: 10px; }
+.carousel-btn.next { right: 10px; }
 
-.dots .active {
-  opacity: 1;
-}
 /* END ................................................................................ */
 
 footer {
@@ -451,6 +524,8 @@ footer {
   text-align: center;
   padding: 2rem 1rem;
   animation: fadeInFooter 1s ease;
+  position: relative;
+  z-index: 6;
 }
 footer a {
   color: #00bcd4;
@@ -460,6 +535,19 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
+.fa-instagram { color: #E1306C; }   /* Instagram pinkish gradient tone */
+.fa-linkedin  { color: #0077B5; }   /* LinkedIn blue */
+.fa-facebook  { color: #1877F2; }   /* Facebook blue */
+.fa-x-twitter { color: #000000; }   /* X/Twitter black */
+.fa-youtube   { color: #FF0000; }   /* YouTube red */
+.fa-brands { color: white; transition: color 0.3s; }
+
+.fa-instagram:hover { color: #E1306C; }
+.fa-linkedin:hover  { color: #0077B5; }
+.fa-facebook:hover  { color: #1877F2; }
+.fa-x-twitter:hover { color: #000000; }
+.fa-youtube:hover   { color: #FF0000; }
+
 /* Scroll To Top Button                                                          ..................*/
 #scrollToTop {
   position: fixed;
@@ -567,4 +655,3 @@ footer a:hover {
   }
 }
 /* End Animation */
-
