@@ -17,10 +17,39 @@
       href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/animation.css" />
     <style>
       #first {
         margin: 16px auto;
+      }
+      .flip-btn {
+        margin-top: 10px;
+        padding: 6px 12px;
+        font-size: 0.9rem;
+        background: #384d37;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        padding: 1rem;
+      }
+
+      .flip-btn:hover {
+        background: #2f3f2e;
+      }
+
+      .service-cards p{
+          display: none;
+        }
+
+      /* Only show buttons on mobile if you want */
+      @media (min-width: 769px) {
+        .flip-btn {
+          display: none;
+        }
+        .service-cards p{
+          display: block;
+        }
       }
     </style>
   </head>
@@ -68,14 +97,14 @@
     </header>
 
     <main>
-      
-      <div class="service-cards" >
+      <div class="service-cards">
         <div class="flip-card" data-animate="slide-in-up">
           <div class="flip-inner">
             <div class="flip-front">
               <img src="img/webdev.png" alt="Web Dev" />
               <h3>Website Development</h3>
               <p class="hint">Hold to Flip</p>
+              <button class="flip-btn">Click to Flip</button>
             </div>
             <div class="flip-back">
               <h4>Features</h4>
@@ -84,16 +113,18 @@
                 <li>SEO Optimized</li>
                 <li>CMS Integration</li>
               </ul>
+              <button class="flip-btn">BACK</button>
             </div>
           </div>
         </div>
 
-        <div class="flip-card" data-animate="slide-in-up" >
-          <div class="flip-inner"> 
+        <div class="flip-card" data-animate="slide-in-up">
+          <div class="flip-inner">
             <div class="flip-front">
               <img src="img/graphic.png" alt="Graphics" />
               <h3>Graphic Designing</h3>
               <p class="hint">Hold to Flip</p>
+              <button class="flip-btn">Click to Flip</button>
             </div>
             <div class="flip-back">
               <h4>Features</h4>
@@ -102,6 +133,7 @@
                 <li>Social Media Kit</li>
                 <li>Banner Ads</li>
               </ul>
+              <button class="flip-btn">BACK</button>
             </div>
           </div>
         </div>
@@ -112,6 +144,7 @@
               <img src="img/videoedit.png" alt="Video Edit" />
               <h3>Video Editing</h3>
               <p class="hint">Hold to Flip</p>
+              <button class="flip-btn">Click to Flip</button>
             </div>
             <div class="flip-back">
               <h4>Features</h4>
@@ -120,6 +153,7 @@
                 <li>Reels & Shorts</li>
                 <li>Promotional Ads</li>
               </ul>
+              <button class="flip-btn">BACK</button>
             </div>
           </div>
         </div>
@@ -153,6 +187,15 @@
       crossorigin="anonymous"
     ></script>
     <script src="scripts/animation.js"></script>
+    <script>
+      document.querySelectorAll(".flip-card").forEach((card) => {
+        card.querySelectorAll(".flip-btn").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            card.classList.toggle("flipped");
+          });
+        });
+      });
+    </script>
 
     <script src="script.js"></script>
   </body>

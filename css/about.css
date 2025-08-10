@@ -348,6 +348,9 @@ footer a:hover {
   .logo {
     height: 40px;
   }
+  .nav-links {
+    min-width: 50vw;
+  }
   footer .social a {
     display: block;
     margin: 0.3rem 0;
