@@ -10,47 +10,73 @@ body {
   background-color: #0a0f14;
   color: #f9f6f6;
   line-height: 1.6;
+  background: linear-gradient(to bottom, #fef6e3, #86a685);
+  color: #384d37;
 }
 
 .HO {
   font-family: "Permanent Marker", cursive;
-  font-weight: 400;
+  font-weight: 900;
   font-style: normal;
   font-size: 2.5rem;
-  color: #ffffff;
+  color: #384d37; /*#ffffff*/
   /* -webkit-text-stroke: 1px black; */
-  text-shadow: -1px -1px 5px #000, 1px -1px 5px #000, -1px 1px 5px #000,
-    1px 1px 5px #000;
+  text-shadow: -1px -1px 5px #f9f6f6, 1px -1px 5px #f9f6f6, -1px 1px 5px #f9f6f6,
+    1px 1px 5px #f9f6f6;/*000000*/
+  animation: bounceIn 1s ease;
 }
 /* Nav Bar */
 .navbar {
-  position: sticky;
+  /* position: sticky;
   top: 0;
   z-index: 19;
-  background-color: #222831;
+  background-color: #384D37;
   color: #eeeeee;
   padding: 1rem 0;
+   */
+  position: sticky;
+  top: 3px;
+  border-radius: 23px;
+  border: none;
+  z-index: 99;
+  background-color: rgba(56, 77, 55, 0.5); /* semi-transparent */
+  color: #87a685;
+  padding: 1rem 0;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px); /* for Safari */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* subtle divider */
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+  width: 98vw;
+  margin: auto;
 }
 
 .navbar .container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  width: 90%;
+  width: 98%;
   margin: auto;
 }
 
 .nav-links {
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
   display: none;
   position: absolute;
-  min-width: 30vw;
-  background-color: #222831;
-  color: #d7e9ec;
-  padding: 1rem;
+  margin-top: 18px;
+  min-width: 30vw;padding: 1rem;
   border-radius: 8px;
-  z-index: 99;
+  z-index: 98;
+  text-align: center;
+  font-size: 1.5rem;
+
+  background-color: rgba(56, 77, 55, 0.5); /* semi-transparent */
+  color: #87a685;
+  padding: 1rem 0;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px); /* for Safari */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* subtle divider */
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+  
   animation: slideInSidebar 1s ease-in-out;
 }
 
@@ -62,11 +88,10 @@ body {
   display: block;
   cursor: pointer;
   position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 30px;
-  height: 22px;
+  right: 26px;
   z-index: 100;
+  width: 30px;
+  height: 35px;
 }
 
 .burger div {
@@ -109,6 +134,9 @@ body {
 
 .nav-links a:hover {
   color: #5b876d;
+  border-radius: 25px;
+  background: white;
+  padding: 1rem 3rem;
 }
 
 .nav-links ul li a:hover::before {
@@ -147,7 +175,7 @@ body {
 @media (max-width:1271px) {
   .hero {
   position: sticky;
-  top: 89px;
+  top: 66px;
   z-index: 1;
 }
 .projects{
@@ -182,6 +210,8 @@ section {
   align-items: center;
   text-align: center;
   color: white;
+  background: linear-gradient(to bottom, #fef6e3, #86a685);
+  color: #384d37;
 }
 
 .slogan {
@@ -305,27 +335,29 @@ section {
 .projects,
 .services {
   padding: 3rem 1rem;
-  background: #fff;
+  background: linear-gradient();
   text-align: center;
   /* border-bottom: 2px solid #1b291a; */
   min-height: 100vh;
+  background: linear-gradient(to bottom, #fef6e3, #86a685);
+  color: #384d37;
   h2 {
     font-size: 2rem;
     animation: bounceIn 1s ease;
   }
 }
-.projects {
+/* .projects {
   background: #384d37;
-}
+} */
 .services {
-  background: #fef6e3;
+  /* background: #fef6e3; */
   .service-card {
     background-color: #e3f6e3;
   }
   #service-head {
     padding: 1rem;
     text-align: center;
-    background: #0e5814;
+    background: #384d37;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
   }
@@ -342,7 +374,7 @@ section {
       padding: 10px;
       position: relative;
       top: 10px;
-      background: #0e5814;
+      background: #384d37;
       border-radius: 5px;
     }
   }
@@ -404,8 +436,9 @@ section {
 /* TESTIMONIAL START ................................................................................ */
 
 /* Section Styling */
-.testimonial{
-  background: #384d37;
+.testimonial {
+  background: linear-gradient(to bottom, #fef6e3, #86a685);
+  color: #384d37;
   height: 70vh;
   padding: 3rem 1rem;
   text-align: center;
@@ -429,7 +462,7 @@ section {
 /* Track (row of cards) */
 .testimonial-track {
   display: flex;
-  gap: 40px; /* spacing between cards */
+  gap: 30px; /* spacing between cards */
   transition: transform 0.5s ease-in-out;
 }
 
@@ -441,14 +474,14 @@ section {
   border-radius: 15px;
   padding: 2rem;
   text-align: left;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(10px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .testimonial-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
 }
 
 /* Card Header */
@@ -470,11 +503,13 @@ section {
 .testimonial-header h3 {
   font-size: 1.2rem;
   margin: 0;
+  font-weight: 700;
 }
 
 .testimonial-header p {
   font-size: 0.9rem;
   opacity: 0.8;
+  font-weight: 400;
 }
 
 /* Card Text */
@@ -504,7 +539,7 @@ section {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
   font-size: 2rem;
@@ -513,8 +548,12 @@ section {
   border-radius: 50%;
   z-index: 2;
 }
-.carousel-btn.prev { left: 10px; }
-.carousel-btn.next { right: 10px; }
+.carousel-btn.prev {
+  left: 10px;
+}
+.carousel-btn.next {
+  right: 10px;
+}
 
 /* END ................................................................................ */
 
@@ -535,18 +574,41 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
-.fa-instagram { color: #E1306C; }   /* Instagram pinkish gradient tone */
-.fa-linkedin  { color: #0077B5; }   /* LinkedIn blue */
-.fa-facebook  { color: #1877F2; }   /* Facebook blue */
-.fa-x-twitter { color: #000000; }   /* X/Twitter black */
-.fa-youtube   { color: #FF0000; }   /* YouTube red */
-.fa-brands { color: white; transition: color 0.3s; }
+.fa-instagram {
+  color: #e1306c;
+} /* Instagram pinkish gradient tone */
+.fa-linkedin {
+  color: #0077b5;
+} /* LinkedIn blue */
+.fa-facebook {
+  color: #1877f2;
+} /* Facebook blue */
+.fa-x-twitter {
+  color: #000000;
+} /* X/Twitter black */
+.fa-youtube {
+  color: #ff0000;
+} /* YouTube red */
+.fa-brands {
+  color: white;
+  transition: color 0.3s;
+}
 
-.fa-instagram:hover { color: #E1306C; }
-.fa-linkedin:hover  { color: #0077B5; }
-.fa-facebook:hover  { color: #1877F2; }
-.fa-x-twitter:hover { color: #000000; }
-.fa-youtube:hover   { color: #FF0000; }
+.fa-instagram:hover {
+  color: #e1306c;
+}
+.fa-linkedin:hover {
+  color: #0077b5;
+}
+.fa-facebook:hover {
+  color: #1877f2;
+}
+.fa-x-twitter:hover {
+  color: #000000;
+}
+.fa-youtube:hover {
+  color: #ff0000;
+}
 
 /* Scroll To Top Button                                                          ..................*/
 #scrollToTop {

@@ -84,7 +84,7 @@
 /* IN */
 .slide-in-left { animation: slideInLeft 1.5s ease forwards; }
 .slide-in-right { animation: slideInRight 1.5s ease forwards; }
-.slide-in-up { animation: slideInUp 1.5s ease forwards; }
+.slide-in-up { animation: slideInUp 0.85s ease forwards; }
 .slide-in-down { animation: slideInDown 1.5s ease forwards; }
 
 .fade-in { animation: fadeIn 1.3s ease forwards; }

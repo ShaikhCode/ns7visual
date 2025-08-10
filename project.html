@@ -16,7 +16,9 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
       rel="stylesheet"
+
     />
+    <link rel="stylesheet" href="css/animation.css">
     <style>
         #first{
             margin: 16px auto;
@@ -67,7 +69,7 @@
     </header>
 
     <main>
-      <div id="first" class="slide-in-left">
+      <div id="first" data-animate="slide-in-left">
         <div class="firstp">
           <img src="img/T1.png" alt="main" />
         </div>
@@ -87,7 +89,7 @@
           </div>
         </div>
       </div>
-      <div id="first" class="slide-in-left">
+      <div id="first" data-animate="slide-in-right">
         <div class="firstd">
           <div>
             <h1 class="HO">BMI</h1>
@@ -107,13 +109,13 @@
           <img src="img/T1.png" alt="main" />
         </div>
       </div>
-      <div id="first" class="slide-in-left">
+      <div id="first" data-animate="slide-in-left">
         <div class="firstp">
           <img src="img/T1.png" alt="main" />
         </div>
         <div class="firstd">
           <div>
-            <h1 class="HO">TCH</h1>
+            <h1 class="HO">TCS</h1>
           </div>
           <div>
             <p>
@@ -131,8 +133,10 @@
     </main>
 
     <footer id="contact">
-      <h2>Contact Us</h2>
-      <p>Email: <a href="mailto:demo@smtp.com">demo@smtp.com</a></p>
+      <h2 class="HO">Contact Us</h2>
+      <p>
+        Email: <a href="mailto:contact@ns7visual.com">contact@ns7visual.com</a>
+      </p>
       <div
         class="social"
         style="
@@ -143,41 +147,31 @@
           gap: 17px;
         "
       >
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://instagram.com/ns7visual"
+          ><i class="fa-brands fa-instagram"></i
+        ></a>
+        <a href="https://www.linkedin.com/company/ns7visual"
+          ><i class="fa-brands fa-linkedin"></i
+        ></a>
+        <a href="https://www.facebook.com/ns7visual"
+          ><i class="fa-brands fa-facebook"></i
+        ></a>
+        <a href="https://x.com/ns7visual"
+          ><i class="fa-brands fa-x-twitter"></i
+        ></a>
+        <a href="https://www.youtube.com/@NS7Exchange/videos?sub_confirmation=1"
+          ><i class="fa-brands fa-youtube"></i
+        ></a>
       </div>
       <p>&copy; 2025 NS7Visual</p>
     </footer>
-
     <button id="scrollToTop"><i class="fa-solid fa-chevron-up"></i></button>
 
     <script
       src="https://kit.fontawesome.com/e062161507.js"
       crossorigin="anonymous"
     ></script>
-    <script>
-      const cards = document.querySelectorAll(".slide-in-left");
-
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-              // Optionally stop observing after first reveal:
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        {
-          threshold: 0.1,
-        }
-      );
-
-      cards.forEach((card) => {
-        observer.observe(card);
-      });
-    </script>
+    <script src="scripts/animation.js"></script>
 
     <script src="script.js"></script>
   </body>

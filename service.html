@@ -17,6 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="css/animation.css">
     <style>
       #first {
         margin: 16px auto;
@@ -67,8 +68,9 @@
     </header>
 
     <main>
-      <div class="service-cards">
-        <div class="flip-card">
+      
+      <div class="service-cards" >
+        <div class="flip-card" data-animate="slide-in-up">
           <div class="flip-inner">
             <div class="flip-front">
               <img src="img/webdev.png" alt="Web Dev" />
@@ -86,8 +88,8 @@
           </div>
         </div>
 
-        <div class="flip-card">
-          <div class="flip-inner">
+        <div class="flip-card" data-animate="slide-in-up" >
+          <div class="flip-inner"> 
             <div class="flip-front">
               <img src="img/graphic.png" alt="Graphics" />
               <h3>Graphic Designing</h3>
@@ -104,7 +106,7 @@
           </div>
         </div>
 
-        <div class="flip-card">
+        <div class="flip-card" data-animate="slide-in-up">
           <div class="flip-inner">
             <div class="flip-front">
               <img src="img/videoedit.png" alt="Video Edit" />
@@ -150,18 +152,7 @@
       src="https://kit.fontawesome.com/e062161507.js"
       crossorigin="anonymous"
     ></script>
-    <script>
-      const flipCards = document.querySelectorAll(".flip-card");
-
-      flipCards.forEach((card) => {
-        card.addEventListener("click", () => {
-          // Only enable click flip on mobile screens
-          if (window.innerWidth <= 768) {
-            card.classList.toggle("flipped");
-          }
-        });
-      });
-    </script>
+    <script src="scripts/animation.js"></script>
 
     <script src="script.js"></script>
   </body>
